@@ -1,6 +1,8 @@
 "use strict";
 import renderDashboard from "./dashboard/dashboard.js";
 import { initCharts } from "./dashboard/chart.js";
+import userContent from "./master/user/user.js";
+import { userAuthen } from "./master/user authentication/userAuthen.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Utility to close all dropdowns except the current
@@ -213,6 +215,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-list a");
   const mainContent = document.getElementById("main-content");
   const dashboard = document.getElementById("Dashboard");
+  const user = document.getElementById("User");
+  const userAuthentication = document.getElementById("userAuthentication");
 
   // Handle dropdown toggles
   document.addEventListener("click", (event) => {
@@ -275,7 +279,15 @@ document.addEventListener("DOMContentLoaded", () => {
       initCharts();
     });
   });
+
+  // Render user content when user is clicked
+  user.addEventListener("click", () => {
+    while (mainContent.firstChild) {
+      mainContent.removeChild(mainContent.firstChild);
+    }
+
+    mainContent.innerHTML = userContent();
+
+    userAuthen();
+  });
 });
-
-
-
