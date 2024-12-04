@@ -3,6 +3,24 @@ import renderDashboard from "./dashboard/dashboard.js";
 import { initCharts } from "./dashboard/chart.js";
 import userContent from "./master/user/user.js";
 import { userAuthen } from "./master/user authentication/userAuthen.js";
+import buyerList from "./master/Account_creation/buyer/buyerList.js";
+import { addBuyer } from "./master/Account_creation/buyer/addBuyer.js";
+import merchandiserList from "./master/Account_creation/merchandiser/merchandiserList.js";
+import { addMerchandiser } from "./master/Account_creation/merchandiser/addMerchandise.js";
+import shippingList from "./master/Account_creation/shipping company/shippingList.js";
+import { addShipping } from "./master/Account_creation/shipping company/addShipping.js";
+import transporterList from "./master/Account_creation/transporter/transporterList.js";
+import { addTransporter } from "./master/Account_creation/transporter/addTransporter.js";
+import rawMaterialList from "./master/Account_creation/Raw material supplier/rawMaterialList.js";
+import { addRawMaterial } from "./master/Account_creation/Raw material supplier/addRawMaterial.js";
+import designerList from "./master/Account_creation/designer/designerList.js";
+import { addDesigner } from "./master/Account_creation/designer/addDesigner.js";
+import dyerList from "./master/Account_creation/dyer/dyerList.js";
+import { addDyer } from "./master/Account_creation/dyer/addDyer.js";
+import otherAccountList from "./master/Account_creation/other account/otherAccountList.js";
+import { addOtherAccount } from "./master/Account_creation/other account/addOtherAccount.js";
+import spinnerList from "./master/Account_creation/spinner/spinnerList.js";
+import { addSpinner } from "./master/Account_creation/spinner/addSpinner.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   // Utility to close all dropdowns except the current
@@ -217,6 +235,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const dashboard = document.getElementById("Dashboard");
   const user = document.getElementById("User");
   const userAuthentication = document.getElementById("userAuthentication");
+  const buyer = document.getElementById("buyer");
+  const merchandiser = document.getElementById("merchandiser");
+  const shippingCompany = document.getElementById("shippingCompany");
+  const transporter = document.getElementById("transporter");
+  const rawMaterialSupplier = document.getElementById("rawMaterialSupplier");
+  const designer = document.getElementById("designer");
+  const dyer = document.getElementById("dyer");
+  const otherAccount = document.getElementById("otherAccount");
+  const spinner = document.getElementById("spinner");
+  const finisherAccount = document.getElementById("finisherAccount");
+  const contractorAccount = document.getElementById("contractorAccount");
 
   // Handle dropdown toggles
   document.addEventListener("click", (event) => {
@@ -271,7 +300,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initCharts();
 
   // Render dashboard content when "Dashboard" is clicked
-  dashboard.addEventListener("click", () => {
+  dashboard.addEventListener("click", (event) => {
+    event.preventDefault();
     mainContent.innerHTML = `<div class="spinner">Loading...</div>`;
     requestAnimationFrame(() => {
       destroyCharts();
@@ -282,12 +312,189 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Render user content when user is clicked
   user.addEventListener("click", () => {
-    while (mainContent.firstChild) {
-      mainContent.removeChild(mainContent.firstChild);
-    }
-
+    mainContent.innerHTML = ``;
     mainContent.innerHTML = userContent();
-
     userAuthen();
+  });
+  // Render userAuthentication content when user is clicked
+  userAuthentication.addEventListener("click", () => {
+    // Clear the main content
+    mainContent.innerHTML = "";
+
+    // Inject the user authentication form into the main content
+    mainContent.innerHTML = `
+      <!-- Add User Form -->
+      <div id="addUserForm" class="p-4 mb-5 bg-white rounded shadow overflow-auto">
+        <h2 class="text-xl font-bold mb-4">Add User</h2>
+        <form id="userForm" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="role" class="block font-medium">Role</label>
+            <select id="role" class="w-full border rounded px-2 py-1">
+              <option>Select Role</option>
+              <option>Administrator</option>
+              <option>Production</option>
+              <option>Raw Material</option>
+              <option>Packing</option>
+              <option>Contractor</option>
+            </select>
+          </div>
+          <div>
+            <label for="branch" class="block font-medium">Office Branch</label>
+            <select id="branch" class="w-full border rounded px-2 py-1">
+              <option>Nothing selected</option>
+              <option>Branch 1</option>
+              <option>Branch 2</option>
+            </select>
+          </div>
+          <div>
+            <label for="name" class="block font-medium">Name</label>
+            <input
+              type="text"
+              id="name"
+              class="w-full border rounded px-2 py-1"
+              placeholder="Name"
+            />
+          </div>
+          <div>
+            <label for="mobile" class="block font-medium">Mobile</label>
+            <input
+              type="text"
+              id="mobile"
+              class="w-full border rounded px-2 py-1"
+              placeholder="Mobile"
+            />
+          </div>
+          <div>
+            <label for="email" class="block font-medium">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="w-full border rounded px-2 py-1"
+              placeholder="Email"
+            />
+          </div>
+          <div>
+            <label for="username" class="block font-medium">Username</label>
+            <input
+              type="text"
+              id="username"
+              class="w-full border rounded px-2 py-1"
+              placeholder="Username"
+            />
+          </div>
+          <div>
+            <label for="password" class="block font-medium">Password</label>
+            <input
+              type="password"
+              id="password"
+              class="w-full border rounded px-2 py-1"
+              placeholder="Password"
+            />
+          </div>
+          <div>
+            <label for="status" class="block font-medium">Status</label>
+            <select id="status" class="w-full border rounded px-2 py-1">
+              <option>Select Status</option>
+              <option>Active</option>
+              <option>Inactive</option>
+            </select>
+          </div>
+          <div class="col-span-1 sm:col-span-2">
+            <button
+              type="submit"
+              class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-300"
+            >
+              Save
+            </button>
+          </div>
+        </form>
+      </div>
+    `;
+
+    // Attach behavior to the newly added form
+    const userForm = document.getElementById("userForm");
+
+    userForm.onsubmit = (event) => {
+      event.preventDefault();
+
+      const newUser = {
+        role: document.getElementById("role").value,
+        unit: document.getElementById("branch").value,
+        name: document.getElementById("name").value,
+        mobile: document.getElementById("mobile").value,
+        email: document.getElementById("email").value,
+        username: document.getElementById("username").value,
+        status: document.getElementById("status").value,
+      };
+
+      console.log("New User Details:", newUser);
+      alert("User successfully added!");
+
+      userAuthen();
+    };
+  });
+  // Render buyer content when user is clicked
+  buyer.addEventListener("click", (event) => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = buyerList();
+    addBuyer();
+  });
+  // Render merchandiser content when user is clicked
+  merchandiser.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = merchandiserList();
+    addMerchandiser();
+  });
+  // Render ShippingCompany content when user is clicked
+  shippingCompany.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = shippingList();
+    addShipping();
+  });
+  // Render ShippingCompany content when user is clicked
+  transporter.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = transporterList();
+    addTransporter();
+  });
+  // Render Raw Material content when user is clicked
+  rawMaterialSupplier.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = rawMaterialList();
+    addRawMaterial();
+  });
+  // Render Designer content when user is clicked
+  designer.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = designerList();
+    addDesigner();
+  });
+  // Render Dyer content when user is clicked
+  dyer.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = dyerList();
+    addDyer();
+  });
+  // Render Other Account content when user is clicked
+  otherAccount.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = otherAccountList();
+    addOtherAccount();
+  });
+  // Render Spinner content when user is clicked
+  spinner.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = spinnerList();
+    addSpinner();
+  });
+  // Render Finisher Account content when user is clicked
+  finisherAccount.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = df;
+  });
+  // Render Contractor Account content when user is clicked
+  contractorAccount.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = asdf;
   });
 });

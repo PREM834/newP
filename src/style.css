@@ -186,3 +186,7 @@ canvas {
 .show-hide-icon:hover {
   color: #0284c7; 
 }
+
+#main-content > * {
+  padding-bottom: 1rem;
+}

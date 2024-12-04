@@ -145,7 +145,7 @@
           <!-- Master -->
           <li class="relative group">
             <a
-              href="#"
+              href="master"
               data-toggle="dropdown"
               data-target="dropdownMaster"
               data-siblings="dropdownStock,dropdownProducts,dropdownPurchase,dropdownBuyerOrder,dropdownSpinning,dropdownDyeing,dropdownArtwork,dropdownContractor,dropdownFinishing,dropdownPacking,dropdownUtility,dropdownReport,dropdownCustomers,dropdownSystemUser"
@@ -168,6 +168,7 @@
               <!-- Manage User -->
               <li>
                 <button
+                href="manageUser"
                   data-toggle="dropdown"
                   data-target="dropdownUser"
                   data-siblings="dropdownAccountCreation,dropdownRawMaterialSetup"
@@ -181,7 +182,7 @@
                   <li
                     id="User"
                     class="text-white hover:text-yellow-300 cursor-pointer"
-                  >
+                  > 
                     User
                   </li>
                   <li
@@ -209,37 +210,37 @@
                   id="dropdownAccountCreation"
                   class="hidden pl-4 space-y-2 mt-2"
                 >
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="buyer" class="text-white hover:text-yellow-300 cursor-pointer">
                     Buyer
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="merchandiser" class="text-white hover:text-yellow-300 cursor-pointer">
                     Merchandiser
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="shippingCompany" class="text-white hover:text-yellow-300 cursor-pointer">
                     Shipping Company
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="transporter" class="text-white hover:text-yellow-300 cursor-pointer">
                     Transporter
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="rawMaterialSupplier" class="text-white hover:text-yellow-300 cursor-pointer">
                     Raw Material Supplier
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="designer" class="text-white hover:text-yellow-300 cursor-pointer">
                     Designer
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="dyer" class="text-white hover:text-yellow-300 cursor-pointer">
                     Dyer
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="otherAccount" class="text-white hover:text-yellow-300 cursor-pointer">
                     Other Account
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="spinner" class="text-white hover:text-yellow-300 cursor-pointer">
                     Spinner
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="finisherAccount" class="text-white hover:text-yellow-300 cursor-pointer">
                     Finisher Account
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li id="contractorAccount" class="text-white hover:text-yellow-300 cursor-pointer">
                     Contractor Account
                   </li>
                 </ul>
@@ -979,9 +980,13 @@
       <!-- Main content section -->
 
       <section
-        id="main-content"
-        class="home-section bg-gradient-to-r from-sky-200 to-blue-500 min-h-screen pl-3 p-2 transition-all duration-300 ease-in-out"
-      ></section>
+  id="main-content"
+  class="home-section bg-gradient-to-r from-sky-200 to-blue-500 min-h-screen pl-3 p-2 mb-2 pb-4 transition-all duration-300 ease-in-out flex flex-col overflow-auto max-h-full"
+>
+  <!-- Your content goes here -->
+</section>
+
+
     </div>
 
     <script type="module" src="src/login/login.js" defer></script>
