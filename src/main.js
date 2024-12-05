@@ -21,6 +21,67 @@ import otherAccountList from "./master/Account_creation/other account/otherAccou
 import { addOtherAccount } from "./master/Account_creation/other account/addOtherAccount.js";
 import spinnerList from "./master/Account_creation/spinner/spinnerList.js";
 import { addSpinner } from "./master/Account_creation/spinner/addSpinner.js";
+import finisherList from "./master/Account_creation/finisher account/finisherList.js";
+import { addFinisher } from "./master/Account_creation/finisher account/addFinisher.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const mainContent = document.getElementById("mainContent");
+
+  // Function to navigate and update URL
+  function navigate(url) {
+    // Ensure the URL is clean and only contains relevant segments
+    const baseUrl = window.location.origin;
+    const path = new URL(url, baseUrl).pathname;  // Ensure it's relative and clean
+
+    // Update the URL (pushState will update without reloading the page)
+    history.pushState(null, null, path);
+
+    // Clear the main content
+    mainContent.innerHTML = `<div class="spinner">Loading...</div>`;
+
+    // Simulate content rendering
+    setTimeout(() => {
+      mainContent.innerHTML = `<h1>Content for ${path}</h1>`;
+    }, 500);
+  }
+
+  // Handle menu clicks
+  document.body.addEventListener("click", (event) => {
+    const target = event.target.closest("[data-url]");
+    if (target) {
+      event.preventDefault();
+
+      // Get the current and parent URLs
+      const parentUrl = target.getAttribute("data-parent-url") || "";
+      let url = `${parentUrl}/${target.getAttribute("data-url")}`.replace(/\/\//g, "/"); // Clean up double slashes
+
+      // If the parent URL is empty or undefined, just use the target URL
+      if (!parentUrl) {
+        url = target.getAttribute("data-url");
+      }
+
+      // Clean the URL by ensuring it doesn't contain any repeated segments
+      navigate(url);
+
+      // Toggle visibility of dropdown if it has siblings
+      const targetDropdown = document.getElementById(target.getAttribute("data-target"));
+      if (targetDropdown) {
+        targetDropdown.classList.toggle("hidden");
+      }
+    }
+  });
+
+  // Handle browser back/forward navigation
+  window.addEventListener("popstate", () => {
+    const currentPath = location.pathname;
+    mainContent.innerHTML = `<div class="spinner">Loading...</div>`;
+    setTimeout(() => {
+      mainContent.innerHTML = `<h1>Content for ${currentPath}</h1>`;
+    }, 500);
+  });
+});
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Utility to close all dropdowns except the current
@@ -322,7 +383,7 @@ document.addEventListener("DOMContentLoaded", () => {
     mainContent.innerHTML = "";
 
     // Inject the user authentication form into the main content
-    mainContent.innerHTML = `
+    mainContent.innerHTML = ` 
       <!-- Add User Form -->
       <div id="addUserForm" class="p-4 mb-5 bg-white rounded shadow overflow-auto">
         <h2 class="text-xl font-bold mb-4">Add User</h2>
@@ -490,11 +551,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render Finisher Account content when user is clicked
   finisherAccount.addEventListener("click", () => {
     mainContent.innerHTML = ``;
-    mainContent.innerHTML = df;
+    mainContent.innerHTML = finisherList();
+    addFinisher();
   });
   // Render Contractor Account content when user is clicked
   contractorAccount.addEventListener("click", () => {
     mainContent.innerHTML = ``;
     mainContent.innerHTML = asdf;
   });
+
+
 });

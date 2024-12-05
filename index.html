@@ -26,7 +26,7 @@
   </head>
 
   <body class="bg-gray-100 font-sans">
-    <div
+    <!-- <div
       id="loginCard"
       class="flex items-center justify-center min-h-screen bg-gradient-to-r from-sky-200 to-blue-500"
     >
@@ -85,9 +85,9 @@
           </button>
         </form>
       </div>
-    </div>
+    </div> -->
 
-    <div id="content" class="hidden">
+    <div id="content" class="hidde">
       <div
         id="sidebar"
         class="sidebar fixed left-0 top-0 h-full w-30 bg-blue-600 rounded-lg py-4 pl-4 transition-all duration-500 ease-in-out z-10 overflow-y-auto"
@@ -126,7 +126,8 @@
           <!-- Dashboard -->
           <li class="relative group">
             <a
-              href="dashboard"
+              href="#"
+              data-url="Dashboard"
               id="Dashboard"
               class="w-full text-left py-2 pl-3 rounded-l-full transition-all duration-300 ease-in-out flex justify-between items-center group-hover:bg-white group-hover:text-gray-700"
             >
@@ -145,7 +146,8 @@
           <!-- Master -->
           <li class="relative group">
             <a
-              href="master"
+              href="#"
+              data-url="Master"
               data-toggle="dropdown"
               data-target="dropdownMaster"
               data-siblings="dropdownStock,dropdownProducts,dropdownPurchase,dropdownBuyerOrder,dropdownSpinning,dropdownDyeing,dropdownArtwork,dropdownContractor,dropdownFinishing,dropdownPacking,dropdownUtility,dropdownReport,dropdownCustomers,dropdownSystemUser"
@@ -168,11 +170,11 @@
               <!-- Manage User -->
               <li>
                 <button
-                href="manageUser"
+                  data-url="Master/ManageUser"
                   data-toggle="dropdown"
                   data-target="dropdownUser"
                   data-siblings="dropdownAccountCreation,dropdownRawMaterialSetup"
-                  class="w-full text-left text-white hover:text-yellow-300 cursor-pointer flex items-center justify-between"
+                  class="w-full text-left text-white hover:text-gray-400 cursor-pointer flex items-center justify-between"
                 >
                   Manage User
                   <span class="ml-auto">&#9662;</span>
@@ -181,13 +183,15 @@
                 <ul id="dropdownUser" class="hidden pl-4 space-y-2 mt-2">
                   <li
                     id="User"
-                    class="text-white hover:text-yellow-300 cursor-pointer"
-                  > 
+                    data-url="Master/ManageUser/user"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     User
                   </li>
                   <li
                     id="userAuthentication"
-                    class="text-white hover:text-yellow-300 cursor-pointer"
+                    data-url="Master/ManageUser/userAuthentication"
+                    class="text-white hover:text-gray-400 cursor-pointer"
                   >
                     User Authentication
                   </li>
@@ -197,10 +201,11 @@
               <!-- Account Creation -->
               <li>
                 <button
+                  data-url="Master/AccountCreation"
                   data-toggle="dropdown"
                   data-target="dropdownAccountCreation"
                   data-siblings="dropdownUser,dropdownRawMaterialSetup"
-                  class="w-full text-left text-white hover:text-yellow-300 cursor-pointer flex items-center justify-between"
+                  class="w-full text-left text-white hover:text-gray-400 cursor-pointer flex items-center justify-between"
                 >
                   Account Creation
                   <span class="ml-auto">&#9662;</span>
@@ -210,37 +215,81 @@
                   id="dropdownAccountCreation"
                   class="hidden pl-4 space-y-2 mt-2"
                 >
-                  <li id="buyer" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="buyer"
+                    data-url="Master/AccountCreation/buyer"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Buyer
                   </li>
-                  <li id="merchandiser" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="merchandiser"
+                    data-url="Master/AccountCreation/merchandiser"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Merchandiser
                   </li>
-                  <li id="shippingCompany" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="shippingCompany"
+                    data-url="Master/AccountCreation/shippingCompany"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Shipping Company
                   </li>
-                  <li id="transporter" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="transporter"
+                    data-url="Master/AccountCreation/transporter"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Transporter
                   </li>
-                  <li id="rawMaterialSupplier" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="rawMaterialSupplier"
+                    data-url="Master/AccountCreation/rawMaterialSupplier"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Raw Material Supplier
                   </li>
-                  <li id="designer" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="designer"
+                    data-url="Master/AccountCreation/designer"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Designer
                   </li>
-                  <li id="dyer" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="dyer"
+                    data-url="Master/AccountCreation/dyer"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Dyer
                   </li>
-                  <li id="otherAccount" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="otherAccount"
+                    data-url="Master/AccountCreation/otherAccount"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Other Account
                   </li>
-                  <li id="spinner" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="spinner"
+                    data-url="Master/AccountCreation/spinner"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Spinner
                   </li>
-                  <li id="finisherAccount" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="finisherAccount"
+                    data-url="Master/AccountCreation/finisherAccount"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Finisher Account
                   </li>
-                  <li id="contractorAccount" class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="contractorAccount"
+                    data-url="Master/AccountCreation/contractorAccount"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Contractor Account
                   </li>
                 </ul>
@@ -249,10 +298,11 @@
               <!-- Raw Material Setup -->
               <li>
                 <button
+                  data-url="Master/RawMaterialSetup"
                   data-toggle="dropdown"
                   data-target="dropdownRawMaterialSetup"
                   data-siblings="dropdownUser,dropdownAccountCreation"
-                  class="w-full text-left text-white hover:text-yellow-300 cursor-pointer flex items-center justify-between"
+                  class="w-full text-left text-white hover:text-gray-400 cursor-pointer flex items-center justify-between"
                 >
                   Raw Material Setup
                   <span class="ml-auto">&#9662;</span>
@@ -262,10 +312,18 @@
                   id="dropdownRawMaterialSetup"
                   class="hidden pl-4 space-y-2 mt-2"
                 >
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="materialQuality"
+                    data-url="Master/RawMaterialSetup/materialQuality"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Material Quality
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li
+                    id="materialName"
+                    data-url="Master/RawMaterialSetup/materialName"
+                    class="text-white hover:text-gray-400 cursor-pointer"
+                  >
                     Material Name
                   </li>
                 </ul>
@@ -296,13 +354,13 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownStock" class="hidden pl-4 mt-2 space-y-2">
-              <li class="text-white hover:text-yellow-300 cursor-pointer">
+              <li class="text-white hover:text-gray-400 cursor-pointer">
                 Ready Stock (Rung Khana)
               </li>
-              <li class="text-white hover:text-yellow-300 cursor-pointer">
+              <li class="text-white hover:text-gray-400 cursor-pointer">
                 Dyed Material
               </li>
-              <li class="text-white hover:text-yellow-300 cursor-pointer">
+              <li class="text-white hover:text-gray-400 cursor-pointer">
                 Undyed Material (Godown)
               </li>
             </ul>
@@ -331,7 +389,7 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownBuyerOrder" class="hidden pl-4 mt-2 space-y-2">
-              <li class="text-white hover:text-yellow-300 cursor-pointer">
+              <li class="text-white hover:text-gray-400 cursor-pointer">
                 Content for Buyer Order
               </li>
             </ul>
@@ -366,7 +424,7 @@
                   data-toggle="dropdown"
                   data-target="dropdownRawMaterialPurchase"
                   data-siblings="dropdownSupplierRegister,dropdownStockOpening"
-                  class="w-full text-left text-white hover:text-yellow-300 cursor-pointer flex items-center justify-between"
+                  class="w-full text-left text-white hover:text-gray-400 cursor-pointer flex items-center justify-between"
                 >
                   Raw Material Purchase
                   <span class="ml-auto">&#9662;</span>
@@ -376,10 +434,10 @@
                   id="dropdownRawMaterialPurchase"
                   class="hidden pl-4 space-y-2 mt-2"
                 >
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li class="text-white hover:text-gray-400 cursor-pointer">
                     Purchase Order
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li class="text-white hover:text-gray-400 cursor-pointer">
                     Purchase Receipt
                   </li>
                 </ul>
@@ -391,7 +449,7 @@
                   data-toggle="dropdown"
                   data-target="dropdownSupplierRegister"
                   data-siblings="dropdownRawMaterialPurchase,dropdownStockOpening"
-                  class="w-full text-left text-white hover:text-yellow-300 cursor-pointer flex items-center justify-between"
+                  class="w-full text-left text-white hover:text-gray-400 cursor-pointer flex items-center justify-between"
                 >
                   Supplier Register
                   <span class="ml-auto">&#9662;</span>
@@ -401,22 +459,22 @@
                   id="dropdownSupplierRegister"
                   class="hidden pl-4 space-y-2 mt-2"
                 >
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li class="text-white hover:text-gray-400 cursor-pointer">
                     Purchase Order Register
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li class="text-white hover:text-gray-400 cursor-pointer">
                     Receive Register
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li class="text-white hover:text-gray-400 cursor-pointer">
                     Balance Register
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li class="text-white hover:text-gray-400 cursor-pointer">
                     Supplier Material Ledger
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li class="text-white hover:text-gray-400 cursor-pointer">
                     Purchase Stock Ledger
                   </li>
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li class="text-white hover:text-gray-400 cursor-pointer">
                     Extra Material Ledger
                   </li>
                 </ul>
@@ -428,7 +486,7 @@
                   data-toggle="dropdown"
                   data-target="dropdownStockOpening"
                   data-siblings="dropdownRawMaterialPurchase,dropdownSupplierRegister"
-                  class="w-full text-left text-white hover:text-yellow-300 cursor-pointer flex items-center justify-between"
+                  class="w-full text-left text-white hover:text-gray-400 cursor-pointer flex items-center justify-between"
                 >
                   Stock Opening
                   <span class="ml-auto">&#9662;</span>
@@ -438,7 +496,7 @@
                   id="dropdownStockOpening"
                   class="hidden pl-4 space-y-2 mt-2"
                 >
-                  <li class="text-white hover:text-yellow-300 cursor-pointer">
+                  <li class="text-white hover:text-gray-400 cursor-pointer">
                     Stock Opening Report
                   </li>
                 </ul>
@@ -471,7 +529,7 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownSpinning" class="hidden pl-4 mt-2 space-y-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Content for Spinning Process
               </li>
             </ul>
@@ -500,19 +558,19 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownDyeing" class="hidden pl-4 mt-2 space-y-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Dyeing Programme List
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Add Dyeing Programme
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Dyeing Issue
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Dyeing Receive
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Dyeing Return
               </li>
 
@@ -584,7 +642,7 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownArtwork" class="hidden pl-4 mt-2 space-y-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Content for Artwork
               </li>
             </ul>
@@ -613,31 +671,31 @@
 
             <!-- Dropdown Content for Contractor Order -->
             <ul id="dropdownContractor" class="hidden pl-4 mt-2 space-y-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Order Issue
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Material Issue
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Other Material Issue
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Other Receive (Bazar)
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Contractor Label Balance
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Material Return
               </li>
 
-              <!-- Contractor Order Submenu -->
+              <!-- Contractor Order  -->
               <li>
                 <button
                   data-toggle="dropdown"
                   data-target="dropdownContractorOrder"
-                  class="w-full text-left p-0.5 text-white hover:text-yellow-300 cursor-pointer flex items-center justify-between"
+                  class="w-full text-left p-0.5 text-white hover:text-gray-400 cursor-pointer flex items-center justify-between"
                 >
                   Contractor Order
                   <span class="ml-auto">&#9662;</span>
@@ -650,37 +708,37 @@
                   class="hidden pl-4 space-y-2 mt-2"
                 >
                   <li
-                    class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
+                    class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
                   >
                     Issue Register
                   </li>
                   <li
-                    class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
+                    class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
                   >
                     Receive Register
                   </li>
                   <li
-                    class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
+                    class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
                   >
                     Balance Register
                   </li>
                   <li
-                    class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
+                    class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
                   >
                     Contractor Folio Report
                   </li>
                   <li
-                    class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
+                    class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
                   >
                     Folio Report List
                   </li>
                   <li
-                    class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
+                    class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
                   >
                     Folio Pending For Final
                   </li>
                   <li
-                    class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
+                    class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
                   >
                     Material Register
                   </li>
@@ -712,10 +770,10 @@
 
             <!-- Dropdown Content for Finishing -->
             <ul id="dropdownFinishing" class="hidden pl-4 mt-2 space-y-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Job Issue
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Job Receive
               </li>
 
@@ -724,7 +782,7 @@
                 <button
                   data-toggle="dropdown"
                   data-target="dropdownJobWorkRegister"
-                  class="w-full text-left p-0.5 text-white hover:text-yellow-300 cursor-pointer flex items-center justify-between"
+                  class="w-full text-left p-0.5 text-white hover:text-gray-400 cursor-pointer flex items-center justify-between"
                 >
                   Job Work Register
                   <span class="ml-auto">&#9662;</span>
@@ -737,17 +795,17 @@
                   class="hidden pl-4 space-y-2 mt-2"
                 >
                   <li
-                    class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
+                    class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
                   >
                     Order Wise Balance Report
                   </li>
                   <li
-                    class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
+                    class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
                   >
                     TDS Register
                   </li>
                   <li
-                    class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
+                    class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
                   >
                     Process Pending Report
                   </li>
@@ -779,7 +837,7 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownPacking" class="hidden pl-4 space-y-2 mt-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Content for Packing
               </li>
             </ul>
@@ -808,7 +866,7 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownUtility" class="hidden pl-4 space-y-2 mt-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Content for Utility
               </li>
             </ul>
@@ -837,28 +895,28 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownProducts" class="hidden pl-4 mt-2 space-y-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Carpet Type
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Quality
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Colour
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Shade Colour
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Shape
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Size
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Design
               </li>
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 BOM (Bill Of Material)
               </li>
             </ul>
@@ -887,7 +945,7 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownReport" class="hidden pl-4 space-y-2 mt-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Content for Report
               </li>
             </ul>
@@ -916,7 +974,7 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownCustomers" class="hidden pl-4 space-y-2 mt-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Content for Customers
               </li>
             </ul>
@@ -945,7 +1003,7 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownSystemUser" class="hidden pl-4 space-y-2 mt-2">
-              <li class="p-0.5 text-white hover:text-yellow-300 cursor-pointer">
+              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
                 Content for System User
               </li>
             </ul>
@@ -980,13 +1038,11 @@
       <!-- Main content section -->
 
       <section
-  id="main-content"
-  class="home-section bg-gradient-to-r from-sky-200 to-blue-500 min-h-screen pl-3 p-2 mb-2 pb-4 transition-all duration-300 ease-in-out flex flex-col overflow-auto max-h-full"
->
-  <!-- Your content goes here -->
-</section>
-
-
+        id="main-content"
+        class="home-section bg-gradient-to-r from-sky-200 to-blue-500 min-h-screen pl-3 p-2 mb-2 pb-4 transition-all duration-300 ease-in-out flex flex-col overflow-auto max-h-full"
+      >
+        <!-- Your content goes here -->
+      </section>
     </div>
 
     <script type="module" src="src/login/login.js" defer></script>

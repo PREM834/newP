@@ -1,6 +1,6 @@
 export default () => {
   return `
-  <main class="w-full px-4">
+  <main class="w-full px-4 mb-3">
         <div class="form-wrapper flex flex-col items-center w-full px-4">
       <!-- Form Container -->
       <div
@@ -35,7 +35,7 @@ export default () => {
               id="accountName"
               name="accountName"
               placeholder="Enter Account Name"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -52,7 +52,7 @@ export default () => {
               id="contactPerson"
               name="contactPerson"
               placeholder="Enter Contact Name"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -67,7 +67,7 @@ export default () => {
               id="email"
               name="email"
               placeholder="xyz@gmail.com"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -81,7 +81,7 @@ export default () => {
               type="text"
               id="Guarantor"
               placeholder="Guarantor Name"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -94,7 +94,7 @@ export default () => {
               type="text"
               id="address"
               placeholder="Enter Address"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -108,7 +108,7 @@ export default () => {
               id="mobileNo"
               placeholder="Enter Your 10 digit Mobile Number"
               name="mobileNo"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -123,7 +123,7 @@ export default () => {
               id="gstinNo"
               placeholder="Enter GST Number"
               name="gstinNo"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -137,7 +137,7 @@ export default () => {
               type="text"
               id="lst"
               placeholder="Enter L.S.T."
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -150,7 +150,7 @@ export default () => {
               type="text"
               id="tds"
               placeholder="Enter TDS (%)"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -165,7 +165,7 @@ export default () => {
               type="text"
               id="paymentTermDays"
               placeholder="Enter Payment Term Days"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -178,7 +178,7 @@ export default () => {
               type="number"
               id="lateFine"
               placeholder="Enter Late Fine"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="Fw-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -190,8 +190,8 @@ export default () => {
             <input
               type="text"
               id="groupName"
-              value="SHIPPING COMPANY"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              value="Transporter"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -204,7 +204,7 @@ export default () => {
               type="text"
               id="city"
               placeholder="Enter City"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -218,7 +218,7 @@ export default () => {
               type="text"
               id="state"
               placeholder="Enter State"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -232,7 +232,7 @@ export default () => {
               type="text"
               id="code"
               placeholder="Enter Code"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -245,7 +245,7 @@ export default () => {
               type="text"
               id="bankName"
               placeholder="Enter Bank Name"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -258,7 +258,7 @@ export default () => {
               type="text"
               id="bankBranch"
               placeholder="Enter Bank Branch"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -273,7 +273,7 @@ export default () => {
               type="text"
               id="AccountNumber"
               placeholder="Enter Account Number"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -287,7 +287,7 @@ export default () => {
               type="text"
               id="IFSCCode"
               placeholder="Enter IFSC Code"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -303,7 +303,7 @@ export default () => {
               type="text"
               id="BankAddress"
               placeholder="Enter Bank Address"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -316,7 +316,7 @@ export default () => {
               type="text"
               id="Opening"
               name="Opening"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -329,7 +329,7 @@ export default () => {
               type="text"
               id="cst"
               name="cst"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
 
@@ -343,7 +343,7 @@ export default () => {
               id="aadharNo"
               name="aadharNo"
               placeholder="Enter Aadhar Number"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -357,7 +357,7 @@ export default () => {
               type="text"
               id="TINNo"
               name="TINNo"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>
@@ -372,7 +372,7 @@ export default () => {
               id="panNo"
               name="panNo"
               placeholder="Enter PAN Number"
-              class="block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-sky-400"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
             <span class="error-message text-red-500 text-sm mt-1 hidden"></span>
           </div>

@@ -1,7 +1,8 @@
-export default()=>{
-    return `
+export default () => {
+  return `
         <!-- Buyer List Section -->
-        <main class="p-2 overflow-y-auto">
+        <main class="w-full px-4 mb-3">
+        <div class="w-full px-4">
     <div id="buyer-list" class="bg-white p-5 mb-5 rounded-lg shadow">
       <div class="flex justify-between items-center mb-4">
         <h1 class="text-2xl font-bold">Buyer List</h1>
@@ -32,7 +33,7 @@ export default()=>{
   </div>
 
     <!-- Add/Edit Buyer Form Section -->
-    <div id="addBuyerForm" class="hidden bg-white p-5 rounded-lg shadow">
+    <div id="addBuyerForm" class="hidden bg-white p-5 mb-3 rounded-lg shadow">
       <div class="flex flex-col sm:flex-row justify-between items-center mb-4">
         <h1 id="form-title" class="text-2xl font-bold">Add Buyer Account</h1>
         <button
@@ -45,108 +46,108 @@ export default()=>{
       <form id="buyerForm">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-gray-700">Contact Person</label>
+            <label class="block text-black">Contact Person</label>
             <input
               type="text"
               id="contactPerson"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
               required
             />
           </div>
           <div>
-            <label class="block text-gray-700">Buyer Company</label>
+            <label class="block text-black">Buyer Company</label>
             <input
               type="text"
               id="buyerCompany"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
               required
             />
           </div>
           <div>
-            <label class="block text-gray-700">Buyer Code</label>
+            <label class="block text-black">Buyer Code</label>
             <input
               type="text"
               id="buyerCode"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
               readonly
             />
           </div>
           <div>
-            <label class="block text-gray-700">Email</label>
+            <label class="block text-black">Email</label>
             <input
               type="email"
               id="buyerEmail"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
           <div>
-            <label class="block text-gray-700">Mobile No</label>
+            <label class="block text-black">Mobile No</label>
             <input
               type="text"
               id="mobileNo"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
           <div>
-            <label class="block text-gray-700">Buyer Address</label>
+            <label class="block text-black">Buyer Address</label>
             <input
               type="text"
               id="buyerAddress"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
           <div>
-            <label class="block text-gray-700">State Code</label>
+            <label class="block text-black">State Code</label>
             <input
               type="text"
               id="stateCode"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
           <div>
-            <label class="block text-gray-700">Pack Format</label>
+            <label class="block text-black">Pack Format</label>
             <input
               type="text"
               id="packFormat"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
           <div>
-            <label class="block text-gray-700">Marka</label>
+            <label class="block text-black">Marka</label>
             <input
               type="text"
               id="marka"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
           <div>
-            <label class="block text-gray-700">Swift Code</label>
+            <label class="block text-black">Swift Code</label>
             <input
               type="text"
               id="swiftCode"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
           <div>
-            <label class="block text-gray-700">Terms & Conditions</label>
+            <label class="block text-black">Terms & Conditions</label>
             <input
               type="text"
               id="termsConditions"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
           <div>
-            <label class="block text-gray-700">Buyer Bank Details</label>
+            <label class="block text-black">Buyer Bank Details</label>
             <input
               type="text"
               id="buyerBankDetails"
-              class="w-full p-2 border rounded focus:border-sky-500 focus:outline-none"
+              class="w-full p-2 border border-gray-300 rounded focus:border-sky-500 focus:outline-none"
             />
           </div>
         </div>
         <button
           type="submit"
-          class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-300 flex items-center gap-2"
+          class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-300 flex justify-end gap-2"
         >
           <i class="bx bx-save"></i> Save
         </button>
@@ -159,13 +160,14 @@ export default()=>{
         class="bg-white p-6 rounded-lg shadow-lg"
         id="deleteModalContent"
       >
-        <h2 class="text-xl font-bold mb-4">Are you sure you want to delete this buyer?</h2>
+        <h2 class="text-xl font-bold mb-4">Are you sure you want to delete this entry?</h2>
         <div class="flex justify-between">
           <button id="cancelDelete" class="bg-gray-500 text-black hover:bg-gray-300 px-4 py-2 rounded">Cancel</button>
           <button id="confirmDelete" class="bg-red-500 text-white hover:bg-red-300 px-4 py-2 rounded">Delete</button>
         </div>
       </div>
     </div>
+    </div>
     </main>
-    `
-}
+    `;
+};
