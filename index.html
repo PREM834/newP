@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>XYZ Company</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -17,11 +20,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/style.css" />
   </head>
 
@@ -370,6 +376,7 @@
           <li class="relative group">
             <a
               href="#"
+              data-url="BuyerOrder"
               data-toggle="dropdown"
               data-target="dropdownBuyerOrder"
               data-siblings="dropdownMaster,dropdownProducts,dropdownStock,dropdownSpinning,dropdownDyeing,dropdownArtwork,dropdownContractor,dropdownFinishing,dropdownPacking,dropdownUtility,dropdownReport,dropdownCustomers,dropdownSystemUser"
@@ -389,8 +396,33 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownBuyerOrder" class="hidden pl-4 mt-2 space-y-2">
-              <li class="text-white hover:text-gray-400 cursor-pointer">
-                Content for Buyer Order
+              <li
+                id="CreateOrder"
+                data-url="BuyerOrder/CreateOrder"
+                class="text-white hover:text-gray-400 cursor-pointer"
+              >
+                Create Order
+              </li>
+              <li
+                id="ViewOrderList"
+                data-url="BuyerOrder/ViewOrderList"
+                class="text-white hover:text-gray-400 cursor-pointer"
+              >
+                View Order List
+              </li>
+              <li
+                id="IntimationLetter"
+                data-url="BuyerOrder/IntimationLetter"
+                class="text-white hover:text-gray-400 cursor-pointer"
+              >
+                Intimation Letter
+              </li>
+              <li
+                id="BuyerOrderStatusReport"
+                data-url="BuyerOrder/BuyerOrderStatusReport"
+                class="text-white hover:text-gray-400 cursor-pointer"
+              >
+                Buyer Order Status Report
               </li>
             </ul>
           </li>
@@ -504,10 +536,11 @@
             </ul>
           </li>
 
-          <!-- Spinning -->
+          <!-- Spinning Process -->
           <li class="relative group">
             <a
               href="#"
+              data-url="SpinningProcess"
               data-toggle="dropdown"
               data-target="dropdownSpinning"
               data-siblings="dropdownMaster,dropdownProducts,dropdownStock,dropdownPurchase,dropdownBuyerOrder,dropdownDyeing,dropdownArtwork,dropdownContractor,dropdownFinishing,dropdownPacking,dropdownUtility,dropdownReport,dropdownCustomers,dropdownSystemUser"
@@ -529,8 +562,19 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownSpinning" class="hidden pl-4 mt-2 space-y-2">
-              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
-                Content for Spinning Process
+              <li
+                id="issue"
+                data-url="SpinningProcess/Issue"
+                class="text-white hover:text-gray-400 cursor-pointer"
+              >
+                Issue
+              </li>
+              <li
+                id="receive"
+                data-url="SpinningProcess/receive"
+                class="text-white hover:text-gray-400 cursor-pointer"
+              >
+                Receive
               </li>
             </ul>
           </li>
@@ -539,6 +583,7 @@
           <li class="relative group">
             <a
               href="#"
+              data-url="Dyeing"
               data-toggle="dropdown"
               data-target="dropdownDyeing"
               data-siblings="dropdownMaster,dropdownProducts,dropdownStock,dropdownPurchase,dropdownBuyerOrder,dropdownSpinning,dropdownArtwork,dropdownContractor,dropdownFinishing,dropdownPacking,dropdownUtility,dropdownReport,dropdownCustomers,dropdownSystemUser"
@@ -558,26 +603,47 @@
 
             <!-- Dropdown Content -->
             <ul id="dropdownDyeing" class="hidden pl-4 mt-2 space-y-2">
-              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
-                Dyeing Programme List
+              <li
+                id="DyeingPrograme"
+                data-url="Dyeing/DyeingPrograme"
+                class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
+              >
+                Dyeing Programe
               </li>
-              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
-                Add Dyeing Programme
-              </li>
-              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
+              <li
+                id="DyeingIssue"
+                data-url="Dyeing/DyeingIssue"
+                class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
+              >
                 Dyeing Issue
               </li>
-              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
+              <li
+                id="DyeingReceive"
+                data-url="Dyeing/DyeingReceive"
+                class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
+              >
                 Dyeing Receive
               </li>
-              <li class="p-0.5 text-white hover:text-gray-400 cursor-pointer">
+              <li
+                id="DyeingReturn"
+                data-url="Dyeing/DyeingReturn"
+                class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
+              >
                 Dyeing Return
+              </li>
+              <li
+                id="DyeingStatusReport"
+                data-url="Dyeing/DyeingStatusReport"
+                class="p-0.5 text-white hover:text-gray-400 cursor-pointer"
+              >
+                Dyeing Status Report
               </li>
 
               <!-- Dyeing Register -->
               <li>
                 <button
                   href="#"
+                  data-url="Dyeing/DyeingRegister"
                   data-toggle="dropdown"
                   data-target="dropdownDyeingRegister"
                   class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
@@ -590,26 +656,36 @@
                   class="hidden pl-4 space-y-2 mt-2"
                 >
                   <li
+                    id="DyeingRegisterDyeingIssue"
+                    data-url="Dyeing/DyeingRegister/DyeingIssue"
                     class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
                   >
                     Dyeing Issue
                   </li>
                   <li
+                    id="ProgramRegister"
+                    data-url="Dyeing/DyeingRegister/ProgramRegister"
                     class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
                   >
                     Program Register
                   </li>
                   <li
+                    id="ReceiveRegister"
+                    data-url="Dyeing/DyeingRegister/ReceiveRegister"
                     class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
                   >
                     Receive Register
                   </li>
                   <li
+                    id="BalanceRegister"
+                    data-url="Dyeing/DyeingRegister/BalanceRegister"
                     class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
                   >
                     Balance Register
                   </li>
                   <li
+                    id="DyerMaterialLedger"
+                    data-url="Dyeing/DyeingRegister/DyerMaterialLedger"
                     class="p-0.5 text-white hover:text-yellow-300 cursor-pointer"
                   >
                     Dyer Material Ledger

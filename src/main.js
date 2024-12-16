@@ -24,6 +24,21 @@ import { addSpinner } from "./master/Account_creation/spinner/addSpinner.js";
 import finisherList from "./master/Account_creation/finisher account/finisherList.js";
 import { addFinisher } from "./master/Account_creation/finisher account/addFinisher.js";
 
+import addOrder from "./buyerOrder/createOrder/addOrder.js";
+import { addOrderjs } from "./buyerOrder/createOrder/addjs.js";
+import viewOrderList from "./buyerOrder/viewOrderList/viewOrderList.js";
+import { addViewOrderList } from "./buyerOrder/viewOrderList/addViewOrderList.js";
+import IntimationLetterList from "./buyerOrder/intimationLetter/IntimationLetterList.js";
+import { addIntimationLetter } from "./buyerOrder/intimationLetter/addIntimationLetter.js";
+import BuyerOrderStatusReportList from "./buyerOrder/buyerOrderStatusReport/BuyerOrderStatusReportList.js";
+import { BuyerOrderStatusReport } from "./buyerOrder/buyerOrderStatusReport/addBuyerOrderStatusReport.js";
+
+import spinningList from "./spinningProcess/spinningList.js";
+import { addChallan } from "./spinningProcess/addChallan.js";
+
+import DyeingProgrameList from "./dyeing/DyeingPrograme/DyeingProgrameList.js";
+import { addDyeingPrograme } from "./dyeing/DyeingPrograme/addDyeingPrograme.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const mainContent = document.getElementById("mainContent");
 
@@ -31,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function navigate(url) {
     // Ensure the URL is clean and only contains relevant segments
     const baseUrl = window.location.origin;
-    const path = new URL(url, baseUrl).pathname;  // Ensure it's relative and clean
+    const path = new URL(url, baseUrl).pathname; // Ensure it's relative and clean
 
     // Update the URL (pushState will update without reloading the page)
     history.pushState(null, null, path);
@@ -53,7 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Get the current and parent URLs
       const parentUrl = target.getAttribute("data-parent-url") || "";
-      let url = `${parentUrl}/${target.getAttribute("data-url")}`.replace(/\/\//g, "/"); // Clean up double slashes
+      let url = `${parentUrl}/${target.getAttribute("data-url")}`.replace(
+        /\/\//g,
+        "/"
+      ); // Clean up double slashes
 
       // If the parent URL is empty or undefined, just use the target URL
       if (!parentUrl) {
@@ -64,7 +82,9 @@ document.addEventListener("DOMContentLoaded", () => {
       navigate(url);
 
       // Toggle visibility of dropdown if it has siblings
-      const targetDropdown = document.getElementById(target.getAttribute("data-target"));
+      const targetDropdown = document.getElementById(
+        target.getAttribute("data-target")
+      );
       if (targetDropdown) {
         targetDropdown.classList.toggle("hidden");
       }
@@ -80,8 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 500);
   });
 });
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   // Utility to close all dropdowns except the current
@@ -293,9 +311,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("closeBtn");
   const navLinks = document.querySelectorAll(".nav-list a");
   const mainContent = document.getElementById("main-content");
+  // DASHBOARD
   const dashboard = document.getElementById("Dashboard");
+  // MASTER
+  // MANAGE USER
   const user = document.getElementById("User");
   const userAuthentication = document.getElementById("userAuthentication");
+  // ACCOUNT CREATION
   const buyer = document.getElementById("buyer");
   const merchandiser = document.getElementById("merchandiser");
   const shippingCompany = document.getElementById("shippingCompany");
@@ -307,6 +329,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const spinner = document.getElementById("spinner");
   const finisherAccount = document.getElementById("finisherAccount");
   const contractorAccount = document.getElementById("contractorAccount");
+
+  // BUYER ORDER
+  const CreateOrder = document.getElementById("CreateOrder");
+  const ViewOrderList = document.getElementById("ViewOrderList");
+  const IntimationLetter = document.getElementById("IntimationLetter");
+  const BBuyerOrderStatusReport = document.getElementById("BuyerOrderStatusReport");
+
+  // SPINNING PROCESS
+  const issue = document.getElementById("issue");
+
+  // DYEING
+  const DyeingPrograme = document.getElementById("DyeingPrograme");
+  const DyeingIssue = document.getElementById("DyeingIssue");
+  const DyeingReceive = document.getElementById("DyeingReceive");
+  const DyeingReturn = document.getElementById("DyeingReturn");
+  const DyeingStatusReport = document.getElementById("DyeingStatusReport");
+  // DYEING REGISTER
+  const DyeingRegisterDyeingIssue = document.getElementById("DyeingRegisterDyeingIssue");
+  const ProgramRegister = document.getElementById("ProgramRegister");
+  const ReceiveRegister = document.getElementById("ReceiveRegister");
+  const BalanceRegister = document.getElementById("BalanceRegister");
+  const DyerMaterialLedger = document.getElementById("DyerMaterialLedger");
 
   // Handle dropdown toggles
   document.addEventListener("click", (event) => {
@@ -360,6 +404,7 @@ document.addEventListener("DOMContentLoaded", () => {
   mainContent.innerHTML = renderDashboard();
   initCharts();
 
+  // DASHBOARD
   // Render dashboard content when "Dashboard" is clicked
   dashboard.addEventListener("click", (event) => {
     event.preventDefault();
@@ -371,6 +416,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // MASTER
+  // MANAGE USER
   // Render user content when user is clicked
   user.addEventListener("click", () => {
     mainContent.innerHTML = ``;
@@ -494,6 +541,8 @@ document.addEventListener("DOMContentLoaded", () => {
       userAuthen();
     };
   });
+
+  // ACCOUNT CREATION
   // Render buyer content when user is clicked
   buyer.addEventListener("click", (event) => {
     mainContent.innerHTML = ``;
@@ -557,8 +606,86 @@ document.addEventListener("DOMContentLoaded", () => {
   // Render Contractor Account content when user is clicked
   contractorAccount.addEventListener("click", () => {
     mainContent.innerHTML = ``;
-    mainContent.innerHTML = asdf;
+    mainContent.innerHTML = ``;
   });
 
+  // BUYER ORDER
+  //  Render create order content when user is clicked
+  CreateOrder.addEventListener("click",()=>{
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = addOrder();
+    addOrderjs();
+  })
+  //  Render View Order List content when user is clicked
+  ViewOrderList.addEventListener("click",()=>{
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = viewOrderList();
+    addViewOrderList();
+  })
+  //  Render Intimation Letter content when user is clicked
+  IntimationLetter.addEventListener("click",()=>{
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = IntimationLetterList();
+     addIntimationLetter();
+  })
+  //  Render Buyer Order Status Report content when user is clicked
+  BBuyerOrderStatusReport.addEventListener("click",()=>{
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = BuyerOrderStatusReportList();
+    BuyerOrderStatusReport();
+  })
+
+  // SPINNING PROCESS
+  // Render issue content when user is clicked
+  issue.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = spinningList();
+    addChallan();
+  });
+
+  // DYEING
+  // Render issue content when user is clicked
+  DyeingPrograme.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = DyeingProgrameList();
+    addDyeingPrograme();
+  });
+  DyeingIssue.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = ``;
+  });
+  DyeingReceive.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = ``;
+  });
+  DyeingReturn.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = ``;
+  });
+  DyeingStatusReport.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = ``;
+  });
+  // DYEING REGISTER
+  DyeingRegisterDyeingIssue.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = ``;
+  });
+  ProgramRegister.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = ``;
+  });
+  ReceiveRegister.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = ``;
+  });
+  BalanceRegister.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = ``;
+  });
+  DyerMaterialLedger.addEventListener("click", () => {
+    mainContent.innerHTML = ``;
+    mainContent.innerHTML = ``;
+  });
 
 });
